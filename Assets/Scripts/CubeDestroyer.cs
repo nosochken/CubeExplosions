@@ -9,7 +9,7 @@ public class CubeDestroyer : MonoBehaviour
 
     public event Action CubeDestroying;
 
-    void Update()
+    private void Update()
     {
         _selectedCube = SelectCube();
 

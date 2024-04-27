@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Barrier : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class Barrier : MonoBehaviour
 
     private void MakeInvisibleForRaycast()
     {
-        gameObject.layer = 2;
+        int raycastIgnoreNumber = 2;
+
+        gameObject.layer = raycastIgnoreNumber;
 
         foreach(Transform childTransform in gameObject.transform)
-            childTransform.gameObject.layer = 2;
+            childTransform.gameObject.layer = raycastIgnoreNumber;
     }
 }
