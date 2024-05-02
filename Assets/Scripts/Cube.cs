@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    private float _chanceOfDivision = 100;
+    private float _chanceOfBreaking = 100;
 
-    public float ChanceOfDivision => _chanceOfDivision;
+    public float ChanceOfBreaking => _chanceOfBreaking;
 
-    public void Initialize(Vector3 scale, float chanceOfDivision)
+    public void Initialize(Vector3 scale, float chanceOfBreaking)
     {
         transform.localScale = scale;
-        _chanceOfDivision = chanceOfDivision;
+        _chanceOfBreaking = chanceOfBreaking;
     }
 
     public Cube Clone()
