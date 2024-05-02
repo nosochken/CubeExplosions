@@ -8,7 +8,12 @@ public class Cube : MonoBehaviour
 
     public void Initialize(Vector3 scale, float chanceOfDivision)
     {
-        gameObject.transform.localScale = scale;
+        transform.localScale = scale;
         _chanceOfDivision = chanceOfDivision;
+    }
+
+    public Cube Clone()
+    {
+        return Instantiate(this);
     }
 }
