@@ -9,7 +9,7 @@ public class Breaker : MonoBehaviour
 
         int result = Random.Range(minChanceOfBreaking, maxChanceOfBreaking);
 
-        return cube.ChanceOfBreaking > result ? true : false;
+        return cube.ChanceOfBreaking > result;
     }
 
     public void BreakIntoCubes(Cube cube)

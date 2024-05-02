@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Breaker))]
+[RequireComponent(typeof(Explosion))]
 public class CubeDestroyer : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
