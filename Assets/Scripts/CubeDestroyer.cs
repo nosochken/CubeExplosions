@@ -1,17 +1,14 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Breaker))]
 [RequireComponent(typeof(Explosion))]
 public class CubeDestroyer : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 
-    private Breaker _breaker;
     private Explosion _explosion;
 
     private void Awake()
     {
-        _breaker = GetComponent<Breaker>();
         _explosion = GetComponent<Explosion>();
     }
 
@@ -25,12 +22,7 @@ public class CubeDestroyer : MonoBehaviour
 
     private void DestroyCube(Cube cube)
     {
-        if (_breaker.CanBreak(cube))
-        {
-            _breaker.BreakIntoCubes(cube);
-            _explosion.Explode(cube);
-        }
-
+        _explosion.Explode(cube);
         Destroy(cube.gameObject);
     }
 

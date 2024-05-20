@@ -16,14 +16,19 @@ public class Breaker : MonoBehaviour
     {
         float reductionOfNewCube = 2f;
         float reducingChanceOfBreaking = 2f;
+        float radiusIncrease = 2f;
+        float forceIncrease = 1.5f;
 
         Vector3 newCubeScale = cube.transform.localScale / reductionOfNewCube;
         float chanceOfBreakingNewCubes = cube.ChanceOfBreaking / reducingChanceOfBreaking;
+        float explosionRadiusOfNewCube = cube.ExplosionRadius * radiusIncrease;
+        float explosionForceOfNewCube = cube.ExplosionForce * forceIncrease;
 
         for (int i = 0; i < GetAmountOfNewCubes(); i++)
         {
             Cube newCube = cube.Clone();
-            newCube.Initialize(newCubeScale, chanceOfBreakingNewCubes);
+            newCube.Initialize(newCubeScale, chanceOfBreakingNewCubes,
+                explosionRadiusOfNewCube, explosionForceOfNewCube);
         }
     }
 
